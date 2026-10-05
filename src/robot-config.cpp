@@ -17,14 +17,6 @@ motor Right1 = motor(PORT4, ratio6_1, false);
 motor Right2 = motor(PORT5, ratio6_1, true);
 motor Right3 = motor(PORT7, ratio6_1, false);
 
-motor Intake1 = motor(PORT10, ratio6_1, false);
-motor Intake2 = motor(PORT11, ratio6_1, false);
-
-pneumatics MatchLoader = pneumatics(Brain.ThreeWirePort.A);
-pneumatics Wing = pneumatics(Brain.ThreeWirePort.F);
-pneumatics triplestate1 = pneumatics(Brain.ThreeWirePort.D);
-pneumatics triplestate2 = pneumatics(Brain.ThreeWirePort.H);
-
 void vexcodeInit( void ) {
   // nothing to initialize
 }

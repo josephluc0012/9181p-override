@@ -65,7 +65,7 @@ motor_group(Right1, Right2, Right3),
 PORT9,
 
 //Input your wheel diameter. (4" omnis are actually closer to 4.125"):
-3.25,
+2.75,
 
 //External ratio, must be in decimal, in the format of input teeth/output teeth.
 //If your motor has an 84-tooth gear and your wheel has a 60-tooth gear, this value will be 1.4.
@@ -186,12 +186,7 @@ void pre_auton() {
  */
 
 void autonomous(void) {
-// right_rush();
-// left_split();
-// skills();
-// random_code();
-// solo_awp();
-left_rush();
+match_auto();
 }
 
 /*---------------------------------------------------------------------------*/
@@ -204,71 +199,21 @@ left_rush();
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
 
-bool wingOpen = false;
-bool lastPress = false;
-bool lastRight = false;
-bool lastDown = false;
-bool matchLoaderOpen = false;
-
 void usercontrol(void) {
   // User control code here, inside the loop
-
-  chassis.set_coordinates(0,0,0);
   while (1) {
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo
     // values based on feedback from the joysticks.
 
     // ........................................................................
- bool rightPress = Controller.ButtonRight.pressing();
-    if (rightPress && !lastRight) {
-        wingOpen = !wingOpen;
-        Wing.set(wingOpen);
-    }
-    lastRight = rightPress;
-
-  bool downPress = Controller.ButtonDown.pressing();
-
-    if (downPress && !lastDown) {
-        matchLoaderOpen = !matchLoaderOpen;
-        MatchLoader.set(matchLoaderOpen);
-    }
-    lastDown = downPress;
-
-    if (Controller.ButtonL2.pressing()) {
-      triplestate1.set(true);
-      triplestate2.set(false); 
-      Intake1.spin(forward, 100, velocityUnits::pct);
-      Intake2.spin(reverse, 100, velocityUnits::pct);
-    } 
-    else if(Controller.ButtonR2.pressing()) {
-      triplestate1.set(false);
-      triplestate2.set(true);
-      Intake1.spin(forward, 100, velocityUnits::pct);
-      Intake2.spin(reverse, 100, velocityUnits::pct);
-    }
-      else if (Controller.ButtonL1.pressing()) {
-      Intake1.spin(forward, 100, velocityUnits::pct);
-      Intake2.spin(reverse, 100, velocityUnits::pct);
-    } 
-      else if (Controller.ButtonR1.pressing()) {
-      Intake1.spin(reverse, 100, velocityUnits::pct);
-      Intake2.spin(forward, 100, velocityUnits::pct);
-    }
-    else {
-      triplestate1.set(false);
-      triplestate2.set(false); 
-      Intake1.stop();
-      Intake2.stop();
-    }
-
+    // Insert user code here. This is where you use the joystick values to
+    // update your motors, etc.
     // ........................................................................
 
     //Replace this line with chassis.control_tank(); for tank drive 
     //or chassis.control_holonomic(); for holo drive.
     chassis.control_arcade();
-
-
 
     wait(20, msec); // Sleep the task for a short amount of time to
                     // prevent wasted resources.

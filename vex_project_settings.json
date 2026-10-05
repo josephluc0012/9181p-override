@@ -1,0 +1,18 @@
+{
+	"project": {
+		"name": "JAR-Template",
+		"slot": 2,
+		"description": "auto code",
+		"platform": "V5",
+		"creationDate": "Fri, 20 Mar 2026 02:16:46 GMT",
+		"language": "cpp",
+		"sdkVersion": "V5_20240802_15_00_00",
+		"cpp": {
+			"includePath": []
+		}
+	},
+	"extension": {
+		"version": "0.8.2026020401",
+		"json": 1
+	}
+}

@@ -15,6 +15,7 @@ extern motor LiftLeft;
 extern motor LiftRight;
 
 extern motor Chainbar;
+extern motor Intake;
 
 //Add your devices below, and don't forget to do the same in robot-config.cpp:
 

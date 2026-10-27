@@ -62,7 +62,7 @@ motor_group(Left1, Left2, Left3),
 motor_group(Right1, Right2, Right3),
 
 //Specify the PORT NUMBER of your inertial sensor, in PORT format (i.e. "PORT1", not simply "1"):
-PORT9,
+PORT18,
 
 //Input your wheel diameter. (4" omnis are actually closer to 4.125"):
 2.75,
@@ -186,7 +186,7 @@ void pre_auton() {
  */
 
 void autonomous(void) {
-// match_auto();
+match_auto();
 }
 
 /*---------------------------------------------------------------------------*/
@@ -201,10 +201,44 @@ void autonomous(void) {
 
 void usercontrol(void) {
   // User control code here, inside the loop
+
+    chassis.set_coordinates(0,0,0);
   while (1) {
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo
     // values based on feedback from the joysticks.
+        if (Controller.ButtonL2.pressing()) {
+      LiftLeft.spin(forward, 100, velocityUnits::pct);
+      LiftRight.spin(forward, 100, velocityUnits::pct);
+    }
+    else if (Controller.ButtonR2.pressing()) {
+      LiftLeft.spin(reverse, 100, velocityUnits::pct);
+      LiftRight.spin(reverse, 100, velocityUnits::pct);
+    }
+    else {
+      LiftLeft.stop();
+      LiftRight.stop();
+    }
+
+    if (Controller.ButtonL1.pressing()) {
+      Intake.spin(forward, 100, velocityUnits::pct);
+    }
+    else if (Controller.ButtonR1.pressing()) {
+      Intake.spin(reverse, 100, velocityUnits::pct);
+    }
+    else {
+      Intake.stop();
+    }
+
+    if (Controller.ButtonRight.pressing()) {
+      Chainbar.spin(forward, 100, velocityUnits::pct);
+    }
+    else if (Controller.ButtonDown.pressing()) {
+      Chainbar.spin(reverse, 100, velocityUnits::pct);
+    }
+    else {
+      Chainbar.stop();
+    }
 
     // ........................................................................
     // Insert user code here. This is where you use the joystick values to

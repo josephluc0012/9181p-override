@@ -127,34 +127,34 @@ void holonomic_odom_test(){
   chassis.holonomic_drive_to_pose(0, 0, 0);
   // custom autons below
 }
-void match_auto(){
-chassis.set_coordinates(0, -62.346, 270);
-// grab pin and cup
-chassis.turn_to_point(-16.626, -51.46, 0, 10, 1.5, 150, 250);
-// lift up lift slightly and pray dont fall
-chassis.drive_to_point(-16.626, -51.46, 0, 10, 12, 1.5, 150, 1000);
-// put lift down and let go of pin
-chassis.turn_to_point(-9.5, -55.814, 90, 10, 1.5, 150, 250);
-wait(0.1, sec);
-chassis.drive_to_point(-9.5, -55.814, 90, 10, 1.5, 150, 250);
-// time to go to the other pins
-chassis.turn_to_point(-19.792, -28.501, 180, 10, 1.5, 150, 1000);
-// slow down before reaching pin
-chassis.drive_to_point(-19.792, -28.501, 0, 10, 12, 1.5, 150, 1000);
-// clamp that shi
-chassis.turn_to_point(-23.751, -41.168, 90, 10, 1.5, 150, 1000);
-wait(0.1, sec);
-chassis.drive_to_point(-23.751, -41.168, 90, 10, 1.5, 150, 1000);
-// go back and score pin
-chassis.turn_to_point(-24.74, -33.647, 180, 10, 12, 1.5, 150, 1000);
-// go back away from goal
-wait(0.1, sec);
-chassis.turn_to_point(-41.366, -43.939, 180, 10, 12, 1.5, 150, 1000);
-// go to the other pin stack
-chassis.drive_to_point(-41.366, -43.939, 180, 10, 12, 1.5, 150, 1000);
-chassis.turn_to_point(-30.678, -46.908, 270, 10, 12, 1.5, 150, 1000);
-// back to goal and also lift up the lift
-chassis.drive_to_point(-30.678, -46.908, 270, 10, 12, 1.5, 150, 1000);
-// score pin and game
-}
-// void next_auto(){
+// void match_auto(){
+// chassis.set_coordinates(0, -62.346, 270);
+// // grab pin and cup
+// chassis.turn_to_point(-16.626, -51.46, 0, 10, 1.5, 150, 250);
+// // lift up lift slightly and pray dont fall
+// chassis.drive_to_point(-16.626, -51.46, 0, 10, 12, 1.5, 150, 1000);
+// // put lift down and let go of pin
+// chassis.turn_to_point(-9.5, -55.814, 90, 10, 1.5, 150, 250);
+// wait(0.1, sec);
+// chassis.drive_to_point(-9.5, -55.814, 90, 10, 1.5, 150, 250);
+// // time to go to the other pins
+// chassis.turn_to_point(-19.792, -28.501, 180, 10, 1.5, 150, 1000);
+// // slow down before reaching pin
+// chassis.drive_to_point(-19.792, -28.501, 0, 10, 12, 1.5, 150, 1000);
+// // clamp that shi
+// chassis.turn_to_point(-23.751, -41.168, 90, 10, 1.5, 150, 1000);
+// wait(0.1, sec);
+// chassis.drive_to_point(-23.751, -41.168, 90, 10, 1.5, 150, 1000);
+// // go back and score pin
+// chassis.turn_to_point(-24.74, -33.647, 180, 10, 12, 1.5, 150, 1000);
+// // go back away from goal
+// wait(0.1, sec);
+// chassis.turn_to_point(-41.366, -43.939, 180, 10, 12, 1.5, 150, 1000);
+// // go to the other pin stack
+// chassis.drive_to_point(-41.366, -43.939, 180, 10, 12, 1.5, 150, 1000);
+// chassis.turn_to_point(-30.678, -46.908, 270, 10, 12, 1.5, 150, 1000);
+// // back to goal and also lift up the lift
+// chassis.drive_to_point(-30.678, -46.908, 270, 10, 12, 1.5, 150, 1000);
+// // score pin and game
+// }
+// // void next_auto(){

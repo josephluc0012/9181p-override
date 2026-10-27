@@ -1,10 +1,10 @@
 {
 	"project": {
-		"name": "JAR-Template",
-		"slot": 2,
-		"description": "auto code",
+		"name": "Match-Auto-Test",
+		"slot": 5,
+		"description": "30 points",
 		"platform": "V5",
-		"creationDate": "Fri, 20 Mar 2026 02:16:46 GMT",
+		"creationDate": "Mon, 05 Oct 2026 02:16:46 GMT",
 		"language": "cpp",
 		"sdkVersion": "V5_20240802_15_00_00",
 		"cpp": {
